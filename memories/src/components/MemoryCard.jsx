@@ -42,20 +42,32 @@ const MemoryCard = () => {
     }
   };
 
+  const removeMemory = async (id) => {
+    try {
+      await axios.delete(`http://localhost:3000/memories/${id}`);
+      fetchMemories(); // refresh list
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
   return (
     <div>
-      <input
-        type="text"
-        value={newTitle}
-        placeholder="Enter a memory title"
-        onChange={(e) => setNewTitle(e.target.value)}
-      />
-      <input
-        type="text"
-        value={newContent}
-        placeholder="Enter content for the memory"
-        onChange={(e) => setNewContent(e.target.value)}
-      />
+      <h1>My Memories</h1>
+      <div>
+        <input
+          type="text"
+          value={newTitle}
+          placeholder="Enter a memory title"
+          onChange={(e) => setNewTitle(e.target.value)}
+        />
+        <input
+          type="text"
+          value={newContent}
+          placeholder="Enter content for the memory"
+          onChange={(e) => setNewContent(e.target.value)}
+        />
+      </div>
 
       <button onClick={addMemory}>Add Memory</button>
 
@@ -65,6 +77,7 @@ const MemoryCard = () => {
             <li key={mem._id}>
               <p>{mem.title}</p>
               <p>{mem.content}</p>
+              <button onClick={() => removeMemory(mem._id)}>x</button>
             </li>
           ))}
         </ul>
