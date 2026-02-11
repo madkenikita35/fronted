@@ -11,7 +11,6 @@ const MemoryCard = () => {
   const [newTitle, setNewTitle] = useState("");
   const [newContent, setNewContent] = useState("");
 
-  // Fetch memories from DB when component loads
   useEffect(() => {
     fetchMemories();
   }, []);
@@ -53,8 +52,8 @@ const MemoryCard = () => {
 
   return (
     <div>
-      <h1>My Memories</h1>
-      <div>
+      <h1 className="Main-Heading">My Memories</h1>
+      <div className="input-div">
         <input
           type="text"
           value={newTitle}
@@ -69,15 +68,22 @@ const MemoryCard = () => {
         />
       </div>
 
-      <button onClick={addMemory}>Add Memory</button>
+      <button className="add-btn" onClick={addMemory}>
+        Add Memory
+      </button>
 
       <div>
-        <ul>
+        <ul className="memories-container ">
           {memories.map((mem) => (
             <li key={mem._id}>
               <p>{mem.title}</p>
               <p>{mem.content}</p>
-              <button onClick={() => removeMemory(mem._id)}>x</button>
+              <button
+                className="remove-btn"
+                onClick={() => removeMemory(mem._id)}
+              >
+                x
+              </button>
             </li>
           ))}
         </ul>
