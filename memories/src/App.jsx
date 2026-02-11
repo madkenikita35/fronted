@@ -4,9 +4,11 @@ import { Routes, Route } from "react-router-dom";
 
 const App = () => {
   return (
-    <Routes>
-      <Route path="/" element={<MemoryCard />} />
-    </Routes>
+    <Background>
+      <Routes>
+        <Route path="/" element={<MemoryCard />} />
+      </Routes>
+    </Background>
   );
 };
 
