@@ -9,6 +9,7 @@ const MemoryCard = () => {
     },
   ]);
   const [card, setCard] = useState(false);
+  const [list, setList] = useState(false);
   const [newTitle, setNewTitle] = useState("");
   const [newContent, setNewContent] = useState("");
 
@@ -51,9 +52,16 @@ const MemoryCard = () => {
     }
   };
 
+  const ChangeCard = () => {
+    setCard((prev) => !prev);
+  };
+  const ChangeList = () => {
+    setList((prev) => !prev);
+  };
+
   return (
     <div>
-      <h1 className="Main-Heading">My Memories</h1>
+      <h1 className="Main-Heading text-2xl ">My Memories</h1>
       <div className="input-div">
         <input
           type="text"
@@ -73,17 +81,42 @@ const MemoryCard = () => {
         Add Memory
       </button>
       <div>
-        <button className="card-btn" onClick={addMemory}>
+        <button
+          className="bg-[#bb5a239c] border-white m-3 p-2 rounded-2xl"
+          onClick={ChangeCard}
+        >
           Card
         </button>
-        <button className="list-btn" onClick={addMemory}>
+        <button
+          className="bg-[#bb5a239c] border-white m-3 p-2 rounded-2xl"
+          onClick={ChangeList}
+        >
           List
         </button>
       </div>
-      <div className="memories-mainContainer">
-        <ul className="memories-container ">
+      {list ? (
+        <div className="memories-mainContainer">
+          <ul className="memories-container ">
+            {memories.map((mem) => (
+              <li key={mem._id}>
+                <p>{mem.title}</p>
+                <p>{mem.content}</p>
+                <button
+                  className="remove-btn"
+                  onClick={() => removeMemory(mem._id)}
+                >
+                  x
+                </button>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ) : null}
+
+      {card ? (
+        <div className="memories-Card">
           {memories.map((mem) => (
-            <li key={mem._id}>
+            <div key={mem._id} className="Card-item">
               <p>{mem.title}</p>
               <p>{mem.content}</p>
               <button
@@ -92,25 +125,10 @@ const MemoryCard = () => {
               >
                 x
               </button>
-            </li>
+            </div>
           ))}
-        </ul>
-      </div>
-
-      <div className="memories-Card">
-        {memories.map((mem) => (
-          <div key={mem._id} className="Card-item">
-            <p>{mem.title}</p>
-            <p>{mem.content}</p>
-            <button
-              className="remove-btn"
-              onClick={() => removeMemory(mem._id)}
-            >
-              x
-            </button>
-          </div>
-        ))}
-      </div>
+        </div>
+      ) : null}
     </div>
   );
 };
