@@ -35,7 +35,7 @@ const MemoryCard = () => {
 
       setNewTitle("");
       setNewContent("");
-      fetchMemories(); // refresh list
+      fetchMemories();
     } catch (error) {
       console.error(error);
     }
@@ -44,7 +44,7 @@ const MemoryCard = () => {
   const removeMemory = async (id) => {
     try {
       await axios.delete(`http://localhost:3000/memories/${id}`);
-      fetchMemories(); // refresh list
+      fetchMemories();
     } catch (error) {
       console.error(error);
     }
@@ -72,7 +72,7 @@ const MemoryCard = () => {
         Add Memory
       </button>
 
-      <div>
+      <div className="memories-mainContainer">
         <ul className="memories-container ">
           {memories.map((mem) => (
             <li key={mem._id}>

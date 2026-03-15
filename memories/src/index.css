@@ -1,3 +1,4 @@
+/* 1. Global & Background Setup */
 html,
 body,
 #root {
@@ -13,68 +14,101 @@ body {
   background-attachment: fixed;
 }
 
+/* 2. Heading */
 .Main-Heading {
   font-family: "Arial Rounded MT Bold", Arial, Helvetica, sans-serif;
   color: #ef9764;
   margin-bottom: 20px;
-  justify-content: center;
   display: flex;
+  justify-content: center;
 }
+
+/* 3. Input Section (The Parent) */
 .input-div {
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  margin-bottom: 20px;
-  padding: 20px;
-  background-color: hsla(50, 100%, 90%, 0.34);
-  border-radius: 8px;
+  gap: 15px;
+  margin: 20px auto; /* Centers the div itself */
+  max-width: 500px; /* Keeps the form from getting too wide */
+  padding: 25px;
+  background-color: rgba(253, 243, 220, 0.6); /* Semi-transparent */
+  backdrop-filter: blur(8px); /* Modern glass effect */
+  border-radius: 12px;
   color: #333;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
 input {
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+  padding: 12px;
+  border: 1px solid #f9a072;
+  border-radius: 8px;
   font-size: 16px;
-  background-color: #fdc3a1;
+  background-color: #fff;
+  outline: none;
 }
 
+/* 4. The Centered Add Button */
 .add-btn {
   color: #fff;
-  padding: 10px 20px;
+  padding: 12px 30px;
   background-color: #fb9b8f;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: white;
   border: none;
   border-radius: 14px;
   cursor: pointer;
   font-size: 16px;
+  font-weight: bold;
+
+  /* The Fix for Centering in a Column Flex */
+  align-self: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  transition: all 0.3s ease;
 }
+
 .add-btn:hover {
   background-color: #e74c3c;
+  transform: translateY(-2px); /* Slight lift on hover */
+}
+
+/* 5. Memories List Section */
+.memories-mainContainer {
+  margin: 20px auto;
+  max-width: 500px;
 }
 
 .memories-container {
   list-style-type: none;
-  padding: 10px;
+  padding: 20px;
   display: flex;
   flex-direction: column;
   gap: 15px;
-  background-color: rgb(255, 247, 205);
-  border-radius: 8px;
+  background-color: rgba(255, 247, 205, 0.8);
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+/* 6. List Item & Remove Button */
+.memory-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(239, 151, 100, 0.2);
 }
 
 .remove-btn {
-  padding: 5px 10px;
+  padding: 6px 12px;
   background-color: #e74c3c;
   color: white;
   border: none;
-  border-radius: 4px;
+  border-radius: 6px;
   cursor: pointer;
-  font-size: 14px;
+  font-size: 13px;
+  transition: background 0.2s;
 }
+
 .remove-btn:hover {
   background-color: #c0392b;
 }
