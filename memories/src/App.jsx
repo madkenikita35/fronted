@@ -6,6 +6,8 @@ const App = () => {
   return (
     <Routes>
       <Route path="/" element={<MemoryCard />} />
+      <Route path="/card" element={<MemoryCard view={"card"} />} />
+      <Route path="/list" element={<MemoryCard />} view={"list"} />
     </Routes>
   );
 };
