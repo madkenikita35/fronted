@@ -96,6 +96,18 @@ const MemoryCard = ({ view }) => {
           List
         </button>
       </div>
+      <div className="nav-buttons">
+        <button className="route-btn" onClick={() => navigate("/card")}>
+          View as Cards
+        </button>
+        <button className="route-btn" onClick={() => navigate("/list")}>
+          View as List
+        </button>
+        <button className="route-btn" onClick={() => navigate("/")}>
+          Hide All
+        </button>
+      </div>
+
       {list ? (
         <div className="memories-mainContainer">
           <ul className="memories-container ">
@@ -132,7 +144,41 @@ const MemoryCard = ({ view }) => {
         </div>
       ) : null}
 
-      {view}
+      {view === "card" && (
+        <div className="memories-Card">
+          {memories.map((mem) => (
+            <div key={mem._id} className="Card-item">
+              <p>{mem.title}</p>
+              <p>{mem.content}</p>
+              <button
+                className="remove-btn"
+                onClick={() => removeMemory(mem._id)}
+              >
+                x
+              </button>
+            </div>
+          ))}
+        </div>
+      )}
+
+      {view === "list" && (
+        <div className="memories-mainContainer">
+          <ul className="memories-container ">
+            {memories.map((mem) => (
+              <li key={mem._id}>
+                <p>{mem.title}</p>
+                <p>{mem.content}</p>
+                <button
+                  className="remove-btn"
+                  onClick={() => removeMemory(mem._id)}
+                >
+                  x
+                </button>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
     </div>
   );
 };
