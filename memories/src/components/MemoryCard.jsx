@@ -8,6 +8,7 @@ const MemoryCard = () => {
       content: "This is a sample memory content.",
     },
   ]);
+  const [card, setCard] = useState(false);
   const [newTitle, setNewTitle] = useState("");
   const [newContent, setNewContent] = useState("");
 
@@ -71,7 +72,14 @@ const MemoryCard = () => {
       <button className="add-btn" onClick={addMemory}>
         Add Memory
       </button>
-
+      <div>
+        <button className="card-btn" onClick={addMemory}>
+          Card
+        </button>
+        <button className="list-btn" onClick={addMemory}>
+          List
+        </button>
+      </div>
       <div className="memories-mainContainer">
         <ul className="memories-container ">
           {memories.map((mem) => (
