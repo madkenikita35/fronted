@@ -34,14 +34,16 @@ body {
   display: flex;
   flex-direction: column;
   gap: 15px;
-  width: 90%; /* Responsive width */
-  max-width: 500px; /* Prevents it from being too wide */
+  width: 90%;
+  min-height: 300px;
+  justify-content: center;
+  max-width: 500px;
   padding: 25px;
   background-color: rgba(253, 243, 220, 0.4);
-  backdrop-filter: blur(10px); /* The blur effect you wanted */
+  backdrop-filter: blur(10px);
   border-radius: 12px;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-  margin-bottom: 15px; /* Space before the button */
+  margin-bottom: 15px;
 }
 
 input {
@@ -53,7 +55,6 @@ input {
   outline: none;
 }
 
-/* 5. The Centered Add Button */
 .add-btn {
   color: #fff;
   padding: 12px 35px;
@@ -65,6 +66,7 @@ input {
   font-weight: bold;
   box-shadow: 0 4px 15px rgba(251, 155, 143, 0.4);
   transition: all 0.3s ease;
+  border: 1px solid white;
 }
 
 .add-btn:hover {
