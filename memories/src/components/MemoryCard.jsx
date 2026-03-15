@@ -84,18 +84,19 @@ const MemoryCard = ({ view }) => {
       </button>
       <div>
         <button
-          className="bg-[#bb5a239c] border-white m-3 p-2 rounded-2xl"
+          className="bg-[#bb5a239c] border border-solid border-white m-3 p-2 rounded-2xl "
           onClick={ChangeCard}
         >
           Card
         </button>
         <button
-          className="bg-[#bb5a239c] border-white m-3 p-2 rounded-2xl"
+          className="bg-[#bb5a239c] border border-solid border-white m-3 p-2 rounded-2xl"
           onClick={ChangeList}
         >
           List
         </button>
       </div>
+
       <div className="nav-buttons">
         <button className="route-btn" onClick={() => navigate("/card")}>
           View as Cards
