@@ -86,13 +86,13 @@ const MemoryCard = ({ memories, fetchMemories, removeMemory }) => {
       </button>
       <div>
         <button
-          className="bg-[#bb5a239c] border border-solid border-white m-3 p-2 rounded-2xl "
+          className="bg-[#bb5a239c] border border-solid border-white m-3 p-2 rounded-2xl hover:bg-[#35280e9c] hover:text-white"
           onClick={ChangeCard}
         >
           Card
         </button>
         <button
-          className="bg-[#bb5a239c] border border-solid border-white m-3 p-2 rounded-2xl"
+          className="bg-[#bb5a239c] border border-solid border-white m-3 p-2 rounded-2xl hover:bg-[#35280e9c] hover:text-white"
           onClick={ChangeList}
         >
           List
