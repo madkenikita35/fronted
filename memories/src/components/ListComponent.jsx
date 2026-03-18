@@ -1,6 +1,6 @@
 import React from "react";
 
-const ListComponent = ({ view }) => {
+const ListComponent = ({ view, memories, removeMemory }) => {
   return (
     <div>
       {view === "list" && (
