@@ -1,6 +1,6 @@
 import React from "react";
 
-const CardComponent = ({ view }) => {
+const CardComponent = ({ view, memories, removeMemory }) => {
   return (
     <div>
       {view === "card" && (
