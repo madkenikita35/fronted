@@ -1,24 +1,7 @@
-// import React from "react";
+import React from "react";
 
-// const CardComponent = () => {
-//   return (
-//     <div>
-//       <div className="memories-Card">
-//         {memories.map((mem) => (
-//           <div key={mem._id} className="Card-item">
-//             <p>{mem.title}</p>
-//             <p>{mem.content}</p>
-//             <button
-//               className="remove-btn"
-//               onClick={() => removeMemory(mem._id)}
-//             >
-//               x
-//             </button>
-//           </div>
-//         ))}
-//       </div>
-//     </div>
-//   );
-// };
+const CardComponent = () => {
+  return <div></div>;
+};
 
-// export default CardComponent;
+export default CardComponent;
