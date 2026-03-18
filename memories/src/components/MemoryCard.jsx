@@ -4,14 +4,14 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
-const MemoryCard = ({ view }) => {
+const MemoryCard = ({ memories, setMemories }) => {
   const navigate = useNavigate();
-  const [memories, setMemories] = useState([
-    {
-      title: "Sample Memory",
-      content: "This is a sample memory content.",
-    },
-  ]);
+  // const [memories, setMemories] = useState([
+  //   {
+  //     title: "Sample Memory",
+  //     content: "This is a sample memory content.",
+  //   },
+  // ]);
   const [card, setCard] = useState(false);
   const [list, setList] = useState(false);
   const [newTitle, setNewTitle] = useState("");
@@ -146,42 +146,6 @@ const MemoryCard = ({ view }) => {
           ))}
         </div>
       ) : null}
-
-      {view === "card" && (
-        <div className="memories-Card">
-          {memories.map((mem) => (
-            <div key={mem._id} className="Card-item">
-              <p>{mem.title}</p>
-              <p>{mem.content}</p>
-              <button
-                className="remove-btn"
-                onClick={() => removeMemory(mem._id)}
-              >
-                x
-              </button>
-            </div>
-          ))}
-        </div>
-      )}
-
-      {view === "list" && (
-        <div className="memories-mainContainer">
-          <ul className="memories-container ">
-            {memories.map((mem) => (
-              <li key={mem._id}>
-                <p>{mem.title}</p>
-                <p>{mem.content}</p>
-                <button
-                  className="remove-btn"
-                  onClick={() => removeMemory(mem._id)}
-                >
-                  x
-                </button>
-              </li>
-            ))}
-          </ul>
-        </div>
-      )}
     </div>
   );
 };
