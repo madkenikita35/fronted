@@ -103,8 +103,8 @@ const MemoryCard = ({ memories, fetchMemories, removeMemory }) => {
       </div>
 
       {list ? (
-        <div className="memories-mainContainer">
-          <ul className="memories-container ">
+        <div className="memories-mainContainer ">
+          <ul className="memories-container gap-1 border-b-black">
             {memories.map((mem) => (
               <li key={mem._id}>
                 <p>{mem.title}</p>
