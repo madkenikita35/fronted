@@ -66,7 +66,7 @@ const App = () => {
       />
 
       <Route
-        path="/update/${mem._id}"
+        path="/update/:id"
         element={
           <UpdateMemory memories={memories} fetchMemories={fetchMemories} />
         }

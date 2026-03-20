@@ -115,7 +115,7 @@ const MemoryCard = ({ memories, fetchMemories, removeMemory }) => {
                 >
                   x
                 </button>
-                <Link to="/update/${mem._id">ℹ️</Link>
+                <Link to={`/update/${mem._id}`}>ℹ️</Link>
               </li>
             ))}
           </ul>
@@ -134,7 +134,7 @@ const MemoryCard = ({ memories, fetchMemories, removeMemory }) => {
               >
                 x
               </button>
-              <Link to="/update/${mem._id}">ℹ️</Link>
+              <Link to={`/update/${mem._id}`}>ℹ️</Link>
             </div>
           ))}
         </div>
