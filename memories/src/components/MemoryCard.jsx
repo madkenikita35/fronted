@@ -104,9 +104,12 @@ const MemoryCard = ({ memories, fetchMemories, removeMemory }) => {
 
       {list ? (
         <div className="memories-mainContainer ">
-          <ul className="memories-container gap-1 border-b-black">
+          <ul className="memories-container gap-1 flex justify-center border border-solid border-amber-800 m-3 p-2 rounded-2xl">
             {memories.map((mem) => (
-              <li key={mem._id}>
+              <li
+                key={mem._id}
+                className="bg-[#b45b284a] p-5 border border-solid border-amber-700 rounded-3xl"
+              >
                 <p>{mem.title}</p>
                 <p>{mem.content}</p>
                 <button
