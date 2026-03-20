@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 
 const MemoryCard = ({ memories, fetchMemories, removeMemory }) => {
   const navigate = useNavigate();
@@ -115,6 +115,7 @@ const MemoryCard = ({ memories, fetchMemories, removeMemory }) => {
                 >
                   x
                 </button>
+                <Link to="/update/${mem._id">ℹ️</Link>
               </li>
             ))}
           </ul>
@@ -133,6 +134,7 @@ const MemoryCard = ({ memories, fetchMemories, removeMemory }) => {
               >
                 x
               </button>
+              <Link to="/update/${mem._id}">ℹ️</Link>
             </div>
           ))}
         </div>
