@@ -21,15 +21,6 @@ const MemoryCard = ({ memories, fetchMemories, removeMemory }) => {
     fetchMemories();
   }, []);
 
-  // const fetchMemories = async () => {
-  //   try {
-  //     const res = await axios.get("http://localhost:3000/memories");
-  //     setMemories(res.data);
-  //   } catch (error) {
-  //     console.error(error);
-  //   }
-  // };
-
   const addMemory = async () => {
     if (!newTitle || !newContent) return;
 
