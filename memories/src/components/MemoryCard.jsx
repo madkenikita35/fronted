@@ -108,6 +108,7 @@ const MemoryCard = ({ memories, fetchMemories, removeMemory }) => {
             {memories.map((mem) => (
               <li
                 key={mem._id}
+                
                 className="bg-[#b45b284a] p-5 border border-solid border-amber-700 rounded-3xl"
               >
                 <p>{mem.title}</p>
