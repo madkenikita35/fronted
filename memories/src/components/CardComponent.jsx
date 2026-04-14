@@ -6,7 +6,7 @@ const CardComponent = ({ view, memories, removeMemory }) => {
       {view === "card" && (
         <div className="memories-Card">
           {memories.map((mem) => (
-            <div key={mem._id} className="Card-item">
+            <div key={mem._id} className=" Card-item ">
               <p>{mem.title}</p>
               <p>{mem.content}</p>
               <button
