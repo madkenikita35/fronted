@@ -10,7 +10,7 @@ const CardComponent = ({ view, memories, removeMemory }) => {
               <p>{mem.title}</p>
               <p>{mem.content}</p>
               <button
-                className="remove-btn "
+                className="remove-btn"
                 onClick={() => removeMemory(mem._id)}
               >
                 x
