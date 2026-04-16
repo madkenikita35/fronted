@@ -6,12 +6,6 @@ import { useNavigate, Link } from "react-router-dom";
 
 const MemoryCard = ({ memories, fetchMemories, removeMemory }) => {
   const navigate = useNavigate();
-  // const [memories, setMemories] = useState([
-  //   {
-  //     title: "Sample Memory",
-  //     content: "This is a sample memory content.",
-  //   },
-  // ]);
   const [card, setCard] = useState(false);
   const [list, setList] = useState(false);
   const [newTitle, setNewTitle] = useState("");
@@ -37,15 +31,6 @@ const MemoryCard = ({ memories, fetchMemories, removeMemory }) => {
       console.error(error);
     }
   };
-
-  // const removeMemory = async (id) => {
-  //   try {
-  //     await axios.delete(`http://localhost:3000/memories/${id}`);
-  //     fetchMemories();
-  //   } catch (error) {
-  //     console.error(error);
-  //   }
-  // };
 
   const ChangeCard = () => {
     setCard((prev) => !prev);
@@ -108,7 +93,6 @@ const MemoryCard = ({ memories, fetchMemories, removeMemory }) => {
             {memories.map((mem) => (
               <li
                 key={mem._id}
-                
                 className="bg-[#b45b284a] p-5 border border-solid border-amber-700 rounded-3xl"
               >
                 <p>{mem.title}</p>
